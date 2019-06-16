@@ -1,0 +1,43 @@
+{
+  "name": "toy-robot-cli",
+  "version": "1.0.0",
+  "license": "MIT",
+  "bin": "./build/cli.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "dev": "pastel dev",
+    "build": "pastel build",
+    "prepare": "pastel build"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "final-form": "^4.15.0",
+    "ink": "^2.2.0",
+    "ink-select-input": "^3.1.1",
+    "ink-text-input": "^3.2.0",
+    "pasteljs": "^1.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-final-form": "^6.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx|json)": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2"
+  }
+}
