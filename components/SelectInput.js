@@ -1,5 +1,5 @@
-import React from "react";
-import InkSelectInput from "ink-select-input";
+import React from 'react';
+import InkSelectInput from 'ink-select-input';
 
 export default function SelectInput({
   onSubmit,

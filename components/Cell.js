@@ -1,5 +1,5 @@
-import React from "react";
-import { Color } from "ink";
+import React from 'react';
+import { Color } from 'ink';
 
 function Blink({ children }) {
   const [blinking, setBlinking] = React.useState(false);
@@ -12,7 +12,7 @@ function Blink({ children }) {
     };
   }, []);
 
-  return blinking ? " " : children;
+  return blinking ? ' ' : children;
 }
 
 export function InactiveCell({ children }) {

@@ -1,7 +1,7 @@
-import React from "react";
-import { Field } from "react-final-form";
-import { Box, Color, Text } from "ink";
-import { changeExt } from "upath";
+import React from 'react';
+import { Field } from 'react-final-form';
+import { Box, Color, Text } from 'ink';
+import { changeExt } from 'upath';
 
 export default function FormFields({ fields, form, handleSubmit, validating }) {
   const [activeField, setActiveField] = React.useState(0);
@@ -19,7 +19,7 @@ export default function FormFields({ fields, form, handleSubmit, validating }) {
             validate,
             defaultValue,
             Input,
-            inputConfig
+            inputConfig,
           },
           index
         ) => (
@@ -42,9 +42,9 @@ export default function FormFields({ fields, form, handleSubmit, validating }) {
                       onSubmit={() => {
                         if (meta.valid && !validating) {
                           if (
-                            typeof defaultValue !== "undefined" &&
-                            (typeof input.value === "undefined" ||
-                              input.value === "")
+                            typeof defaultValue !== 'undefined' &&
+                            (typeof input.value === 'undefined' ||
+                              input.value === '')
                           ) {
                             form.change(name, defaultValue);
                           }

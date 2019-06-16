@@ -1,11 +1,11 @@
-import React from "react";
-import { Form, FormSpy } from "react-final-form";
-import { numberField } from "./common";
-import FormFields from "./FormFields";
-import Layout, { CellGrid } from "./Layout";
-import { InactiveCell } from "./Cell";
-import { Box, Text } from "ink";
-import { clampNumber } from "../core";
+import React from 'react';
+import { Form, FormSpy } from 'react-final-form';
+import { numberField } from './common';
+import FormFields from './FormFields';
+import Layout, { CellGrid } from './Layout';
+import { InactiveCell } from './Cell';
+import { Box, Text } from 'ink';
+import { clampNumber } from '../core';
 
 const MAX_WIDTH = 10;
 const MAX_HEIGHT = 10;
@@ -17,35 +17,35 @@ export default function SizeScreen(props) {
     const { width, height } = state;
     return [
       {
-        name: "width",
-        label: "width",
+        name: 'width',
+        label: 'width',
         placeholder: `${width}`,
         defaultValue: width,
         validate: x =>
           (Number.isInteger(x) && x < 1) || x > MAX_WIDTH
             ? `Invalid, 1 to 10 only`
             : undefined,
-        ...numberField
+        ...numberField,
       },
       {
-        name: "height",
-        label: "height",
+        name: 'height',
+        label: 'height',
         placeholder: `${height}`,
         defaultValue: height,
         validate: y =>
           (Number.isInteger(y) && y < 1) || y > MAX_HEIGHT
             ? `Invalid, 0 to 10 only`
             : undefined,
-        ...numberField
-      }
+        ...numberField,
+      },
     ];
   }, [state]);
 
   React.useEffect(() => {
     if (submission) {
       setTimeout(() => {
-        dispatch({ type: "INIT", payload: submission });
-        setAppMode("PLACEMENT");
+        dispatch({ type: 'INIT', payload: submission });
+        setAppMode('PLACEMENT');
       });
     }
   }, [submission]);
@@ -59,7 +59,7 @@ export default function SizeScreen(props) {
               {({ values }) => {
                 const mergedState = {
                   ...state,
-                  ...values
+                  ...values,
                 };
                 let { width, height } = mergedState;
                 width = clampNumber(1, MAX_WIDTH, width);

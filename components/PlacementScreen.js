@@ -1,12 +1,12 @@
-import React from "react";
-import { Form, FormSpy } from "react-final-form";
-import { Box, Text } from "ink";
-import SelectInput from "./SelectInput";
-import { numberField, DIRECTIONS_ARROW } from "./common";
-import FormFields from "./FormFields";
-import Layout, { CellGrid } from "./Layout";
-import { BlinkingActiveCell, InactiveCell } from "./Cell";
-import { DIRECTIONS, clampNumber } from "../core";
+import React from 'react';
+import { Form, FormSpy } from 'react-final-form';
+import { Box, Text } from 'ink';
+import SelectInput from './SelectInput';
+import { numberField, DIRECTIONS_ARROW } from './common';
+import FormFields from './FormFields';
+import Layout, { CellGrid } from './Layout';
+import { BlinkingActiveCell, InactiveCell } from './Cell';
+import { DIRECTIONS, clampNumber } from '../core';
 
 export default function PlacementScreen(props) {
   const { setAppMode, state, dispatch } = props;
@@ -15,30 +15,30 @@ export default function PlacementScreen(props) {
     const { x, y, width, height, direction } = state;
     return [
       {
-        name: "x",
-        label: "x",
+        name: 'x',
+        label: 'x',
         placeholder: `${x}`,
         defaultValue: x,
         validate: x =>
           (Number.isInteger(x) && x < 0) || x >= width
             ? `Invalid, 0 to ${width - 1} only`
             : undefined,
-        ...numberField
+        ...numberField,
       },
       {
-        name: "y",
-        label: "y",
+        name: 'y',
+        label: 'y',
         placeholder: `${y}`,
         defaultValue: y,
         validate: y =>
           (Number.isInteger(y) && y < 0) || y >= height
             ? `Invalid, 0 to ${height - 1} only`
             : undefined,
-        ...numberField
+        ...numberField,
       },
       {
-        name: "direction",
-        label: "direction",
+        name: 'direction',
+        label: 'direction',
         placeholder: DIRECTIONS[direction],
         Input: SelectInput,
         format: x => DIRECTIONS[x],
@@ -46,18 +46,18 @@ export default function PlacementScreen(props) {
           initialIndex: direction,
           items: DIRECTIONS.map((x, idx) => ({
             label: x,
-            value: idx
-          }))
-        }
-      }
+            value: idx,
+          })),
+        },
+      },
     ];
   }, [state]);
 
   React.useEffect(() => {
     if (submission) {
       setTimeout(() => {
-        dispatch({ type: "PLACE", payload: submission });
-        setAppMode("PLAY_SELECT");
+        dispatch({ type: 'PLACE', payload: submission });
+        setAppMode('PLAY_SELECT');
       });
     }
   }, [submission]);
@@ -71,7 +71,7 @@ export default function PlacementScreen(props) {
               {({ values }) => {
                 const mergedState = {
                   ...state,
-                  ...values
+                  ...values,
                 };
                 const { direction, width, height } = mergedState;
                 let { x, y } = mergedState;

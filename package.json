@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "pastel dev",
     "build": "pastel build",
-    "prepare": "pastel build"
+    "prepare": "pastel build",
+    "test": "jest"
   },
   "files": [
     "build"
@@ -36,8 +37,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
     "husky": "^2.4.1",
+    "jest": "^24.8.0",
     "lint-staged": "^8.2.1",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "react-hooks-testing-library": "^0.5.1",
+    "react-test-renderer": "^16.8.6"
   }
 }

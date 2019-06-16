@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { Box, Color, Text } from "ink";
-import { PlayLayout } from "./Layout";
-import { instructions } from "./common";
-import { useKeyHandler } from "./utils";
+import React, { useEffect } from 'react';
+import { Box, Color, Text } from 'ink';
+import { PlayLayout } from './Layout';
+import { instructions } from './common';
+import { useKeyHandler } from './utils';
 
 export default function PlayKeyboardScreen(props) {
   const [exiting, setExiting] = React.useState(false);
@@ -15,12 +15,12 @@ export default function PlayKeyboardScreen(props) {
   }, [exiting]);
 
   useKeyHandler(data => {
-    if (data === " ") dispatch({ type: "MOVE" });
-    if (data === "\u001B\u005B\u0044") dispatch({ type: "LEFT" });
-    if (data === "\u001B\u005B\u0043") dispatch({ type: "RIGHT" });
-    if (data === "q") setAppMode("PLAY_SELECT");
-    if (data === "r") setAppMode("SIZE");
-    if (data === "x") setExiting(true);
+    if (data === ' ') dispatch({ type: 'MOVE' });
+    if (data === '\u001B\u005B\u0044') dispatch({ type: 'LEFT' });
+    if (data === '\u001B\u005B\u0043') dispatch({ type: 'RIGHT' });
+    if (data === 'q') setAppMode('PLAY_SELECT');
+    if (data === 'r') setAppMode('SIZE');
+    if (data === 'x') setExiting(true);
   });
 
   return (

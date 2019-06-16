@@ -1,5 +1,5 @@
-import React from "react";
-import InkTextInput from "ink-text-input";
+import React from 'react';
+import InkTextInput from 'ink-text-input';
 
 export default function TextInput({ onBlur, onFocus, ...props }) {
   React.useEffect(() => {

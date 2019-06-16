@@ -1,8 +1,8 @@
-import React from "react";
-import { Box } from "ink";
-import { ActiveCell, InactiveCell } from "./Cell";
-import { DIRECTIONS_ARROW } from "./common";
-import { BoardGrid, DIRECTIONS } from "../core";
+import React from 'react';
+import { Box } from 'ink';
+import { ActiveCell, InactiveCell } from './Cell';
+import { DIRECTIONS_ARROW } from './common';
+import { BoardGrid, DIRECTIONS } from '../core';
 
 export default function Layout({ grid, sidebar, panel }) {
   return (
