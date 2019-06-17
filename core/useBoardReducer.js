@@ -1,4 +1,6 @@
 import React from 'react';
+import { DIRECTIONS, DIRECTIONS_MAP } from './constants';
+import { clampNumber } from './utils';
 
 function boardReducer(state, action) {
   const { payload, type } = action;
@@ -9,8 +11,8 @@ function boardReducer(state, action) {
         ...state,
         x: clampNumber(0, width - 1, state.x),
         y: clampNumber(0, height - 1, state.y),
-        width,
-        height,
+        width: Math.max(1, width),
+        height: Math.max(1, height),
       };
     }
 
@@ -56,7 +58,7 @@ function boardReducer(state, action) {
       };
 
     default:
-      throw new Error();
+      throw new Error('Invalid action type');
   }
 }
 
