@@ -1,6 +1,13 @@
+<div align="center">
 <h1>toy-robot-cli</h1>
 
 A CLI exploration with `react`, `pastel` and `ink` libraries
+
+![GIF recording of toy-robot-cli in action](toy-robot-cli.gif)
+
+</div>
+
+<hr />
 
 ## Table of Contents
 
