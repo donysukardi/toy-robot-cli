@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field } from 'react-final-form';
 import { Box, Color, Text } from 'ink';
-import { changeExt } from 'upath';
+import figures from 'figures';
 
 export default function FormFields({ fields, form, handleSubmit, validating }) {
   const [activeField, setActiveField] = React.useState(0);
@@ -66,13 +66,14 @@ export default function FormFields({ fields, form, handleSubmit, validating }) {
                   {meta.invalid && meta.touched && (
                     <Box marginLeft={2}>
                       <Color red>
-                        ✖{meta.error && meta.touched && ` ${meta.error}`}
+                        {figures.cross}
+                        {meta.error && meta.touched && ` ${meta.error}`}
                       </Color>
                     </Box>
                   )}
                   {meta.valid && meta.touched && !meta.active && (
                     <Box marginLeft={2}>
-                      <Color green>✔</Color>
+                      <Color green>{figures.tick}</Color>
                     </Box>
                   )}
                 </Box>

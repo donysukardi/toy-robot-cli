@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, FormSpy } from 'react-final-form';
 import { Box, Text } from 'ink';
+import figures from 'figures';
 import SelectInput from './SelectInput';
 import { numberField, DIRECTIONS_ARROW } from './common';
 import FormFields from './FormFields';
@@ -89,7 +90,9 @@ export default function PlacementScreen(props) {
                           {DIRECTIONS_ARROW[direction]}
                         </BlinkingActiveCell>
                       ) : (
-                        <InactiveCell {...props}>▢</InactiveCell>
+                        <InactiveCell {...props}>
+                          {figures.squareSmallFilled}
+                        </InactiveCell>
                       )
                     }
                   />

@@ -1,4 +1,11 @@
+import figures from 'figures';
 import TextInput from './TextInput';
+
+const KEY_ARROW_LEFT = '\u001B\u005B\u0044';
+const KEY_ARROW_RIGHT = '\u001B\u005B\u0043';
+const KEY_ARROW_UP = '\u001B[A';
+const KEY_ARROW_DOWN = '\u001B[B';
+const KEY_ENTER = '\r';
 
 const numberField = {
   format: value => (Number.isInteger(value) ? `${value}` : ''),
@@ -9,7 +16,12 @@ const numberField = {
   Input: TextInput,
 };
 
-const DIRECTIONS_ARROW = ['⇧', '⇨', '⇩', '⇦'];
+const DIRECTIONS_ARROW = [
+  figures.arrowUp,
+  figures.arrowRight,
+  figures.arrowDown,
+  figures.arrowLeft,
+];
 const instructions = [
   {
     label: 'Move one unit forward in current direction',
@@ -43,4 +55,13 @@ const instructions = [
   },
 ];
 
-export { numberField, DIRECTIONS_ARROW, instructions };
+export {
+  numberField,
+  instructions,
+  DIRECTIONS_ARROW,
+  KEY_ARROW_LEFT,
+  KEY_ARROW_RIGHT,
+  KEY_ARROW_UP,
+  KEY_ARROW_DOWN,
+  KEY_ENTER,
+};

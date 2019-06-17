@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from 'ink';
+import figures from 'figures';
 import { ActiveCell, InactiveCell } from './Cell';
 import { DIRECTIONS_ARROW } from './common';
 import { BoardGrid, DIRECTIONS } from '../core';
@@ -53,7 +54,9 @@ export function PlayLayout(props) {
             active ? (
               <ActiveCell {...props}>{DIRECTIONS_ARROW[direction]}</ActiveCell>
             ) : (
-              <InactiveCell {...props}>▢</InactiveCell>
+              <InactiveCell {...props}>
+                {figures.squareSmallFilled}
+              </InactiveCell>
             )
           }
         />

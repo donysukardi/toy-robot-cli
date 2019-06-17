@@ -1,10 +1,12 @@
 import React from 'react';
+import { Box, Text } from 'ink';
 import { Form, FormSpy } from 'react-final-form';
+import figures from 'figures';
 import { numberField } from './common';
 import FormFields from './FormFields';
 import Layout, { CellGrid } from './Layout';
 import { InactiveCell } from './Cell';
-import { Box, Text } from 'ink';
+
 import { clampNumber } from '../core';
 
 const MAX_WIDTH = 10;
@@ -34,7 +36,7 @@ export default function SizeScreen(props) {
         defaultValue: height,
         validate: y =>
           (Number.isInteger(y) && y < 1) || y > MAX_HEIGHT
-            ? `Invalid, 0 to 10 only`
+            ? `Invalid, 1 to 10 only`
             : undefined,
         ...numberField,
       },
@@ -70,7 +72,9 @@ export default function SizeScreen(props) {
                     {...mergedState}
                     width={width}
                     height={height}
-                    renderCell={() => <InactiveCell>▢</InactiveCell>}
+                    renderCell={() => (
+                      <InactiveCell>{figures.squareSmallFilled}</InactiveCell>
+                    )}
                   />
                 );
               }}
