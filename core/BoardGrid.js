@@ -1,5 +1,5 @@
-export default function BoardGrid(props) {
-  const { width, height, renderRow, renderCell } = props;
+// Render grid with reversed y index, i.e. 0 index is at the bottom of the grid
+export default function BoardGrid({ width, height, renderRow, renderCell }) {
   return Array.from({ length: height }).map((_, deltaY) => {
     const yIdx = height - deltaY - 1; // Reverse Y for display
     return renderRow({

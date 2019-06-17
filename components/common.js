@@ -9,10 +9,10 @@ const KEY_ENTER = '\r';
 
 const numberField = {
   format: value => (Number.isInteger(value) ? `${value}` : ''),
-  parse: value =>
-    typeof value !== 'undefined' && value !== ''
-      ? parseInt(value.replace(/[^0-9]/g, ''))
-      : undefined,
+  parse: value => {
+    const numberString = value.replace(/[^0-9]/g, '');
+    return numberString !== '' ? parseInt(numberString) : undefined;
+  },
   Input: TextInput,
 };
 

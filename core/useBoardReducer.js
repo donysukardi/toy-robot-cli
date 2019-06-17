@@ -28,6 +28,7 @@ function boardReducer(state, action) {
     case 'MOVE': {
       let { x, y } = state;
       const { direction, width, height } = state;
+      /* istanbul ignore else  */
       if (direction === DIRECTIONS_MAP.NORTH) {
         y = y + 1;
       } else if (direction === DIRECTIONS_MAP.EAST) {

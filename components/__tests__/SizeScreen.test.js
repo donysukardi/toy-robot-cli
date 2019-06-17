@@ -18,17 +18,17 @@ describe('SizeScreen', () => {
     const lastFrameStr = sanitizeConsoleString(lastFrame());
 
     expect(lastFrameStr).toMatchInlineSnapshot(`
-     "
-      ◼  ◼  ◼  ◼  ◼
-      ◼  ◼  ◼  ◼  ◼
-      ◼  ◼  ◼  ◼  ◼
-      ◼  ◼  ◼  ◼  ◼
-      ◼  ◼  ◼  ◼  ◼
+      "
+       ◼  ◼  ◼  ◼  ◼
+       ◼  ◼  ◼  ◼  ◼
+       ◼  ◼  ◼  ◼  ◼
+       ◼  ◼  ◼  ◼  ◼
+       ◼  ◼  ◼  ◼  ◼
 
-      First, let's set the size of the table
+       First, let's set the size of the table
 
-      width: 5
-      height: 5"
+       width: 5
+       height: 5"
     `);
   });
 
@@ -44,6 +44,7 @@ describe('SizeScreen', () => {
       />
     );
 
+    stdin.write('a'); // Shouldn't be registered
     stdin.write('6');
     stdin.write(KEY_ENTER);
     stdin.write('15');

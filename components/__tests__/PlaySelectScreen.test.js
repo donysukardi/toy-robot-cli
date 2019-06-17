@@ -72,6 +72,10 @@ describe('PlaySelectScreen', () => {
     stdin.write(KEY_ENTER);
     expect(setAppModeSpy).toHaveBeenLastCalledWith('PLAY_KEYBOARD');
 
+    stdin.write(KEY_ARROW_DOWN);
+    stdin.write(KEY_ARROW_DOWN);
+    stdin.write(KEY_ENTER);
+
     // Add tests for exit once `act` has been added to ink-testing-library
   });
 });
