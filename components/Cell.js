@@ -1,5 +1,5 @@
 import React from 'react';
-import { Color } from 'ink';
+import { Text } from 'ink';
 
 function Blink({ children }) {
   const [blinking, setBlinking] = React.useState(false);
@@ -17,24 +17,24 @@ function Blink({ children }) {
 
 export function InactiveCell({ children }) {
   return (
-    <Color gray dim>
+    <Text color="gray" dim>
       {children}
-    </Color>
+    </Text>
   );
 }
 
 export function ActiveCell({ children }) {
   return (
-    <Color bold green>
+    <Text bold color="green">
       {children}
-    </Color>
+    </Text>
   );
 }
 
 export function BlinkingActiveCell({ children }) {
   return (
-    <Color bold green>
+    <Text bold color="green">
       <Blink>{children}</Blink>
-    </Color>
+    </Text>
   );
 }
