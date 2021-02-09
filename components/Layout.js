@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'ink';
+import { Box, Text } from 'ink';
 import figures from 'figures';
 import { ActiveCell, InactiveCell } from './Cell';
 import { DIRECTIONS_ARROW } from './common';
@@ -63,11 +63,21 @@ export function PlayLayout(props) {
       }
       sidebar={
         <React.Fragment>
-          <Box>x: {x}</Box>
-          <Box>y: {y}</Box>
-          <Box>direction: {DIRECTIONS[direction]}</Box>
-          <Box>width: {width}</Box>
-          <Box>height: {height}</Box>
+          <Box>
+            <Text>x: {x}</Text>
+          </Box>
+          <Box>
+            <Text>y: {y}</Text>
+          </Box>
+          <Box>
+            <Text>direction: {DIRECTIONS[direction]}</Text>
+          </Box>
+          <Box>
+            <Text>width: {width}</Text>
+          </Box>
+          <Box>
+            <Text>height: {height}</Text>
+          </Box>
         </React.Fragment>
       }
       panel={panel}

@@ -5,7 +5,7 @@ import { sanitizeConsoleString } from '../utils';
 
 describe('sanitizeConsoleString', () => {
   it('should remove colors from console output string', () => {
-    const { lastFrame } = render(<Color green>Hello</Color>);
+    const { lastFrame } = render(<Text color="green">Hello</Text>);
     const lastFrameString = sanitizeConsoleString(lastFrame());
 
     expect(lastFrameString).toEqual('Hello');

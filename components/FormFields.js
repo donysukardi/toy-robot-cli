@@ -61,19 +61,19 @@ export default function FormFields({ fields, form, handleSubmit, validating }) {
                     />
                   ) : (
                     (input.value && <Text>{input.value}</Text>) ||
-                    (placeholder && <Color gray>{placeholder}</Color>)
+                    (placeholder && <Text color="gray">{placeholder}</Text>)
                   )}
                   {meta.invalid && meta.touched && (
                     <Box marginLeft={2}>
-                      <Color red>
+                      <Text color="red">
                         {figures.cross}
                         {meta.error && meta.touched && ` ${meta.error}`}
-                      </Color>
+                      </Text>
                     </Box>
                   )}
                   {meta.valid && meta.touched && !meta.active && (
                     <Box marginLeft={2}>
-                      <Color green>{figures.tick}</Color>
+                      <Text color="green">{figures.tick}</Text>
                     </Box>
                   )}
                 </Box>

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Box, Color, Text } from 'ink';
+import React from 'react';
+import { Box, Color, Text, useInput } from 'ink';
 import { PlayLayout } from './Layout';
 import { instructions, KEY_ARROW_LEFT, KEY_ARROW_RIGHT } from './common';
 import { useKeyHandler } from './utils';
@@ -14,13 +14,13 @@ export default function PlayKeyboardScreen(props) {
     }
   }, [exiting]);
 
-  useKeyHandler(data => {
-    if (data === ' ') dispatch({ type: 'MOVE' });
-    if (data === KEY_ARROW_LEFT) dispatch({ type: 'LEFT' });
-    if (data === KEY_ARROW_RIGHT) dispatch({ type: 'RIGHT' });
-    if (data === 'q') setAppMode('PLAY_SELECT');
-    if (data === 'r') setAppMode('SIZE');
-    if (data === 'x') setExiting(true);
+  useInput((input, key) => {
+    if (input === ' ') dispatch({ type: 'MOVE' });
+    if (key.leftArrow) dispatch({ type: 'LEFT' });
+    if (key.rightArrow) dispatch({ type: 'RIGHT' });
+    if (input === 'q') setAppMode('PLAY_SELECT');
+    if (input === 'r') setAppMode('SIZE');
+    if (input === 'x') setExiting(true);
   });
 
   return (
@@ -44,10 +44,12 @@ export default function PlayKeyboardScreen(props) {
                   <Box key={x.value} flexDirection="row">
                     <Box width={5} justifyContent="flex-end">
                       <Box>
-                        <Color blue>{x.keyboard}</Color>
+                        <Text color="blue">{x.keyboard}</Text>
                       </Box>
                     </Box>
-                    <Box marginLeft={2}>{x.label}</Box>
+                    <Box marginLeft={2}>
+                      <Text>{x.label}</Text>
+                    </Box>
                   </Box>
                 ))}
               </Box>
